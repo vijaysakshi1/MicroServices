@@ -1,0 +1,50 @@
+services:
+  basket.api:
+    build:
+      context: D:\Deepak\MicroServices\MicroServices
+      dockerfile: src/Basket/Basket.API/Dockerfile
+    depends_on:
+    - basketDb
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionString:Redis: basketDb:6379
+    image: basketapi
+    ports:
+    - published: 8001
+      target: 80
+    volumes:
+    - /.aspnet/https:/root/.aspnet/https:rw
+    - /.microsoft/usersecrets:/root/.microsoft/usersecrets:rw
+  basketDb:
+    container_name: basketDb
+    image: redis
+    ports:
+    - published: 6379
+      target: 6379
+    restart: always
+  catalog.api:
+    build:
+      context: D:\Deepak\MicroServices\MicroServices
+      dockerfile: src/Catalog/Catalog.API/Dockerfile
+    depends_on:
+    - catalogDb
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CatalogDatabseSettings:ConnectionString: mongodb://catalogDb:27017
+    image: catalogapi
+    ports:
+    - published: 8000
+      target: 80
+    volumes:
+    - /.aspnet/https:/root/.aspnet/https:rw
+    - /.microsoft/usersecrets:/root/.microsoft/usersecrets:rw
+  catalogDb:
+    container_name: catalogDb
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+    volumes:
+    - /site:/data/db:rw
+version: '3.4'

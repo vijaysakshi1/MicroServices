@@ -1,0 +1,5 @@
+D:\Deepak\MicroServices\MicroServices\src\Common\EventBusRabbitMQ\bin\Debug\netcoreapp3.1\EventBusRabbitMQ.deps.json
+D:\Deepak\MicroServices\MicroServices\src\Common\EventBusRabbitMQ\bin\Debug\netcoreapp3.1\EventBusRabbitMQ.dll
+D:\Deepak\MicroServices\MicroServices\src\Common\EventBusRabbitMQ\obj\Debug\netcoreapp3.1\EventBusRabbitMQ.csprojAssemblyReference.cache
+D:\Deepak\MicroServices\MicroServices\src\Common\EventBusRabbitMQ\obj\Debug\netcoreapp3.1\EventBusRabbitMQ.AssemblyInfoInputs.cache
+D:\Deepak\MicroServices\MicroServices\src\Common\EventBusRabbitMQ\obj\Debug\netcoreapp3.1\EventBusRabbitMQ.AssemblyInfo.cs
