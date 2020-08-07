@@ -34,6 +34,7 @@ namespace Basket.API
             services.AddSingleton<ConnectionMultiplexer>(sp =>
             {
                 ConfigurationOptions configuration = ConfigurationOptions.Parse(Configuration.GetConnectionString("Redis"), true);
+                configuration.AbortOnConnectFail = false;
                 return ConnectionMultiplexer.Connect(configuration);
             });
 

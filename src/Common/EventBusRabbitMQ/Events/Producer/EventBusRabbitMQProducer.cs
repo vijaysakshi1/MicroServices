@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System;
-using System.Collections.Generic;
 using System.Text;
-using System.Text.Json.Serialization;
 
 namespace EventBusRabbitMQ.Events.Producer
 {
@@ -18,11 +16,11 @@ namespace EventBusRabbitMQ.Events.Producer
 
         public void PublishBasketCheckout(string queueName, BasketCheckoutEvent checkoutEvent)
         {
-            using(var channel = connection.CreateModel())
+            using (IModel channel = connection.CreateModel())
             {
                 channel.QueueDeclare(queue: queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);
-                var message = JsonConvert.SerializeObject(checkoutEvent);
-                var body = Encoding.UTF8.GetBytes(message);
+                string message = JsonConvert.SerializeObject(checkoutEvent);
+                byte[] body = Encoding.UTF8.GetBytes(message);
 
                 IBasicProperties properties = channel.CreateBasicProperties();
                 properties.Persistent = true;

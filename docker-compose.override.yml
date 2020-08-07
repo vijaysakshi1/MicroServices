@@ -1,15 +1,15 @@
 version: '3.4'
 
 services:
-    catalogDb:
-        container_name: catalogDb
+    catalogdb:
+        container_name: catalogdb
         restart: always
         volumes:
             - ${WEBAPP_STORAGE_HOME}/site:/data/db
         ports:
             - "27017:27017"
-    basketDb:
-        container_name: basketDb
+    basketdb:
+        container_name: basketdb
         restart: always
         ports:
             - "6379:6379"
@@ -17,9 +17,9 @@ services:
     catalog.api:
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
-            - "CatalogDatabseSettings:ConnectionString=mongodb://catalogDb:27017"
+            - "CatalogDatabseSettings:ConnectionString=mongodb://catalogdb:27017"
         depends_on:
-            - catalogDb
+            - catalogdb
         volumes:
             - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
             - ${HOME}/.aspnet/https:/root/.aspnet/https
@@ -28,9 +28,9 @@ services:
     basket.api:
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
-            - "ConnectionString:Redis=basketDb:6379"
+            - "ConnectionStrings:Redis=basketdb:6379"
         depends_on:
-            - basketDb
+            - basketdb
         volumes:
             - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
             - ${HOME}/.aspnet/https:/root/.aspnet/https

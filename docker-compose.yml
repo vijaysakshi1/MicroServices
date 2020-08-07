@@ -1,9 +1,9 @@
 version: '3.4'
 
 services:
-    catalogDb:
+    catalogdb:
         image: mongo
-    basketDb:
+    basketdb:
         image: redis
 
     catalog.api:

@@ -15,35 +15,35 @@ namespace Basket.API.Controllers
     [ApiController]
     public class BasketController : ControllerBase
     {
-        private readonly IBasketRepository _repository;
+        private readonly IBasketRepository repository;
         private readonly ILogger<BasketController> _logger;
-        private readonly IMapper _mapper;
-        private readonly EventBusRabbitMQProducer _eventBus;
+        private readonly IMapper mapper;
+        private readonly EventBusRabbitMQProducer eventBus;
 
         public BasketController(IBasketRepository repository, ILogger<BasketController> logger, IMapper mapper, EventBusRabbitMQProducer eventBus)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _mapper = mapper;
-            _eventBus = eventBus;
+            this.mapper = mapper;
+            this.eventBus = eventBus;
         }
 
         [HttpGet]
         public async Task<ActionResult> GetBasket(string userName)
         {
-            return Ok(await _repository.GetBasket(userName) ?? new BasketCart(userName));
+            return Ok(await repository.GetBasket(userName) ?? new BasketCart(userName));
         }
 
         [HttpPost]
         public async Task<ActionResult> UpdateBasket([FromBody] BasketCart basket)
         {
-            return Ok(await _repository.UpdateBasket(basket));
+            return Ok(await repository.UpdateBasket(basket));
         }
 
         [HttpDelete("{userName}")]
         public async Task<IActionResult> DeleteBasket(string userName)
         {
-            return Ok(await _repository.DeleteBasket(userName));
+            return Ok(await repository.DeleteBasket(userName));
         }
 
         [HttpPost]
@@ -53,19 +53,19 @@ namespace Basket.API.Controllers
             //get total price
             //remove basket
             //senc checkout event to rabbit
-            BasketCart basket = await _repository.GetBasket(checkout.UserName);
+            BasketCart basket = await repository.GetBasket(checkout.UserName);
             if (basket == null) return BadRequest();
 
-            bool basketRemoved = await _repository.DeleteBasket(checkout.UserName);
+            bool basketRemoved = await repository.DeleteBasket(checkout.UserName);
             if (!basketRemoved) return BadRequest();
 
-            var eventMessage = _mapper.Map<BasketCheckoutEvent>(checkout);
+            var eventMessage = mapper.Map<BasketCheckoutEvent>(checkout);
             eventMessage.RequestId = Guid.NewGuid();
             eventMessage.TotalPrice = checkout.TotalPrice;
 
             try
             {
-                _eventBus.PublishBasketCheckout(EventBusConstants.BasketCheckoutQueue, eventMessage);
+                eventBus.PublishBasketCheckout(EventBusConstants.BasketCheckoutQueue, eventMessage);
             }
             catch (Exception)
             {
