@@ -20,6 +20,7 @@ D:\Deepak\MicroServices\MicroServices\src\Catalog\Catalog.API\bin\Debug\netcorea
 D:\Deepak\MicroServices\MicroServices\src\Catalog\Catalog.API\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
 D:\Deepak\MicroServices\MicroServices\src\Catalog\Catalog.API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
 D:\Deepak\MicroServices\MicroServices\src\Catalog\Catalog.API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+D:\Deepak\MicroServices\MicroServices\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.csprojAssemblyReference.cache
 D:\Deepak\MicroServices\MicroServices\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.AssemblyInfoInputs.cache
 D:\Deepak\MicroServices\MicroServices\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.AssemblyInfo.cs
 D:\Deepak\MicroServices\MicroServices\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.csproj.CoreCompileInputs.cache

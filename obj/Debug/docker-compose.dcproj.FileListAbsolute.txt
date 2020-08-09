@@ -13,6 +13,8 @@ D:\Deepak\MicroServices\MicroServices\bin\Debug\Swashbuckle.AspNetCore.Swagger.d
 D:\Deepak\MicroServices\MicroServices\bin\Debug\MongoDB.Driver.Core.dll
 D:\Deepak\MicroServices\MicroServices\bin\Debug\Microsoft.OpenApi.dll
 D:\Deepak\MicroServices\MicroServices\bin\Debug\StackExchange.Redis.dll
+D:\Deepak\MicroServices\MicroServices\bin\Debug\EventBusRabbitMQ.dll
+D:\Deepak\MicroServices\MicroServices\bin\Debug\RabbitMQ.Client.dll
 D:\Deepak\MicroServices\MicroServices\bin\Debug\AutoMapper.dll
 D:\Deepak\MicroServices\MicroServices\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Deepak\MicroServices\MicroServices\bin\Debug\Newtonsoft.Json.dll
@@ -27,9 +29,7 @@ D:\Deepak\MicroServices\MicroServices\bin\Debug\System.IO.Pipelines.dll
 D:\Deepak\MicroServices\MicroServices\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\Deepak\MicroServices\MicroServices\bin\Debug\Catalog.API.pdb
 D:\Deepak\MicroServices\MicroServices\bin\Debug\Basket.API.pdb
+D:\Deepak\MicroServices\MicroServices\bin\Debug\EventBusRabbitMQ.pdb
 D:\Deepak\MicroServices\MicroServices\obj\Debug\docker-compose.dcprojAssemblyReference.cache
 D:\Deepak\MicroServices\MicroServices\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\Deepak\MicroServices\MicroServices\obj\Debug\docker-compose.dcproj.CopyComplete
-D:\Deepak\MicroServices\MicroServices\bin\Debug\EventBusRabbitMQ.dll
-D:\Deepak\MicroServices\MicroServices\bin\Debug\RabbitMQ.Client.dll
-D:\Deepak\MicroServices\MicroServices\bin\Debug\EventBusRabbitMQ.pdb
