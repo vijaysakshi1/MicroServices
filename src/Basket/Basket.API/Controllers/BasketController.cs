@@ -51,11 +51,10 @@ namespace Basket.API.Controllers
         public async Task<IActionResult> Checkout([FromBody] BasketCheckout checkout)
         {
             //get total price
-            //remove basket
-            //senc checkout event to rabbit
             BasketCart basket = await repository.GetBasket(checkout.UserName);
             if (basket == null) return BadRequest();
 
+            //remove basket
             bool basketRemoved = await repository.DeleteBasket(checkout.UserName);
             if (!basketRemoved) return BadRequest();
 
@@ -65,6 +64,7 @@ namespace Basket.API.Controllers
 
             try
             {
+                //send checkout event to rabbit
                 eventBus.PublishBasketCheckout(EventBusConstants.BasketCheckoutQueue, eventMessage);
             }
             catch (Exception)
@@ -73,7 +73,7 @@ namespace Basket.API.Controllers
                 throw;
             }
 
-            return Ok();
+            return Accepted();
         }
 
     }
