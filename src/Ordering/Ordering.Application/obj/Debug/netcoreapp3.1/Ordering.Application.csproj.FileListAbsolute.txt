@@ -1,0 +1,8 @@
+D:\Deepak\MicroServices\MicroServices\src\Ordering\Ordering.Application\bin\Debug\netcoreapp3.1\Ordering.Application.deps.json
+D:\Deepak\MicroServices\MicroServices\src\Ordering\Ordering.Application\bin\Debug\netcoreapp3.1\Ordering.Application.dll
+D:\Deepak\MicroServices\MicroServices\src\Ordering\Ordering.Application\bin\Debug\netcoreapp3.1\Ordering.Application.pdb
+D:\Deepak\MicroServices\MicroServices\src\Ordering\Ordering.Application\obj\Debug\netcoreapp3.1\Ordering.Application.AssemblyInfoInputs.cache
+D:\Deepak\MicroServices\MicroServices\src\Ordering\Ordering.Application\obj\Debug\netcoreapp3.1\Ordering.Application.AssemblyInfo.cs
+D:\Deepak\MicroServices\MicroServices\src\Ordering\Ordering.Application\obj\Debug\netcoreapp3.1\Ordering.Application.dll
+D:\Deepak\MicroServices\MicroServices\src\Ordering\Ordering.Application\obj\Debug\netcoreapp3.1\Ordering.Application.pdb
+D:\Deepak\MicroServices\MicroServices\src\Ordering\Ordering.Application\obj\Debug\netcoreapp3.1\Ordering.Application.csprojAssemblyReference.cache
